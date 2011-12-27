@@ -79,6 +79,9 @@ public class DevelopmentSettings extends PreferenceFragment
 
     private static final String PROCESSOR = "processor";
 
+    private static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
+
+
     private IWindowManager mWindowManager;
     private IBackupManager mBackupManager;
 
@@ -101,6 +104,7 @@ public class DevelopmentSettings extends PreferenceFragment
     private ListPreference mAppProcessLimit;
 
     private CheckBoxPreference mShowAllANRs;
+    private CheckBoxPreference mKillAppLongpressBack;
 
     // To track whether Yes was clicked in the adb warning dialog
     private boolean mOkClicked;
@@ -142,6 +146,10 @@ public class DevelopmentSettings extends PreferenceFragment
                 SHOW_ALL_ANRS_KEY);
 
         mProcessor = (PreferenceScreen) findPreference(PROCESSOR);
+
+        mKillAppLongpressBack = (CheckBoxPreference) findPreference(
+                KILL_APP_LONGPRESS_BACK);
+
 
         final Preference verifierDeviceIdentifier = findPreference(VERIFIER_DEVICE_IDENTIFIER);
         final PackageManager pm = getActivity().getPackageManager();
@@ -186,6 +194,7 @@ public class DevelopmentSettings extends PreferenceFragment
         updateImmediatelyDestroyActivitiesOptions();
         updateAppProcessLimitOptions();
         updateShowAllANRsOptions();
+        updateKillAppLongpressBackOptions();
     }
 
     private void updateHdcpValues() {
@@ -413,6 +422,17 @@ public class DevelopmentSettings extends PreferenceFragment
             getActivity().getContentResolver(), Settings.Secure.ANR_SHOW_BACKGROUND, 0) != 0);
     }
 
+    private void writeKillAppLongpressBackOptions() {
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.Secure.KILL_APP_LONGPRESS_BACK,
+                mKillAppLongpressBack.isChecked() ? 1 : 0);
+    }
+
+    private void updateKillAppLongpressBackOptions() {
+        mKillAppLongpressBack.setChecked(Settings.Secure.getInt(
+            getActivity().getContentResolver(), Settings.Secure.KILL_APP_LONGPRESS_BACK, 0) != 0);
+    }
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 
@@ -459,6 +479,8 @@ public class DevelopmentSettings extends PreferenceFragment
             writeImmediatelyDestroyActivitiesOptions();
         } else if (preference == mShowAllANRs) {
             writeShowAllANRsOptions();
+        } else if (preference == mKillAppLongpressBack) {
+            writeKillAppLongpressBackOptions();
         } else if (preference == mForceHardwareUi) {
             writeHardwareUiOptions();
         } else {
