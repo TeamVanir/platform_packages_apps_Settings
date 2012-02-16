@@ -3787,6 +3787,19 @@ found in the list of installed apps.</string>
     "system_update_settings_list_item_title" in this project. [CHAR LIMIT=25] -->
     <string name="additional_system_update_settings_list_item_title">Additional system updates</string>
 
+    <!-- Status bar toggles settings -->
+    <string name="toggles_layout">Status bar toggles</string>
+    <string name="alternate_button_layout_title">Toggle style</string>
+    <string name="alternate_button_layout_summary">Use buttons instead of switches</string>
+    <string name="enabled_toggles_title">Enabled toggles</string>
+    <string name="enabled_toggles_summary">Choose which toggles to display</string>
+    <string name="toggles_order_title">Toggle order</string>
+    <string name="toggles_order_summary">Choose which order to display toggles</string>
+    <string name="brightness_location_title">Brightness location</string>
+    <string name="always_visible_toggles">Auto-hide toggles</string>
+    <string name="default_title">Reset toggle defaults</string>
+
+
     <!-- Performance Settings -->
     <string name="performance_settings_title">Performance</string>
     <string name="processor_title">Processor</string>
