@@ -1399,11 +1399,5 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".bb.fragments.StatusBarToggles" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-
     </application>
 </manifest>
