@@ -1714,6 +1714,7 @@
     <string name="build_number">Build number</string>
     <!-- About phone screen,  setting option name-->
     <string name="build_date">Build date</string>
+    <string name="compiled_by">Compiled by</string>
     <string name="mod_version">ViciousAOSP version</string>
     <string name="mod_version_default">Unknown</string>
 
