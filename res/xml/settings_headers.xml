@@ -20,12 +20,12 @@
 <!-- ViciousAOSP Optons -->
     <header android:title="@string/vicious_settings_title" />
 
-    <header android:icon="@drawable/ic_settings_jdkx"
+    <header android:icon="@drawable/ic_settings_about"
             android:title="@string/goo_manager_title">
         <intent
                 android:action="android.intent.action.MAIN"
-                android:targetClass="com.s0up.goomanager.MainActivity"
-                android:targetPackage="com.s0up.goo-manager" />
+                android:targetClass="com.s0up.goomanager.GooManagerActivity"
+                android:targetPackage="com.s0up.goomanager" />
     </header>
 
 
