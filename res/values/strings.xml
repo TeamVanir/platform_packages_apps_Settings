@@ -3814,9 +3814,4 @@ found in the list of installed apps.</string>
     <string name="cpu_set_on_boot">Set on boot</string>
     <string name="cpu_set_on_boot_summary">Restore the processor settings on boot</string>
 
-
-<!-- Schtuffs -->
-<string name="vicious_settings_title">ViciousAOSP Settings</string>
-<string name="goo_manager_title">Goo.im Manager</string>
-
 </resources>
