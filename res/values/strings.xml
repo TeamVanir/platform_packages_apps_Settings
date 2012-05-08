@@ -3814,4 +3814,8 @@ found in the list of installed apps.</string>
     <string name="cpu_set_on_boot">Set on boot</string>
     <string name="cpu_set_on_boot_summary">Restore the processor settings on boot</string>
 
+<!-- Schtuffs -->
+<string name="vicious_settings_title">ViciousAOSP Settings</string>
+<string name="theme_manager_title">Theme Chooser</string>
+
 </resources>
