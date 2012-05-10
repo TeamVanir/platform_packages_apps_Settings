@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.bb;
-
-import com.android.settings.bb.fragments.Processor;
+package com.android.settings.vicious;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -36,6 +34,7 @@ public class BootReceiver extends BroadcastReceiver {
     private static final String TAG = "BootReceiver";
 
     private static final String CPU_SETTINGS_PROP = "sys.cpufreq.restored";
+    private static final String KSM_SETTINGS_PROP = "sys.ksm.restored";
 
     @Override
     public void onReceive(Context ctx, Intent intent) {
@@ -45,6 +44,16 @@ public class BootReceiver extends BroadcastReceiver {
             configureCPU(ctx);
         } else {
             SystemProperties.set(CPU_SETTINGS_PROP, "false");
+        }
+
+        if (Utils.fileExists(MemoryManagement.KSM_RUN_FILE)) {
+            if (SystemProperties.getBoolean(KSM_SETTINGS_PROP, false) == false
+                    && intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
+                SystemProperties.set(KSM_SETTINGS_PROP, "true");
+                configureKSM(ctx);
+            } else {
+                SystemProperties.set(KSM_SETTINGS_PROP, "false");
+            }
         }
     }
 
@@ -86,5 +95,14 @@ public class BootReceiver extends BroadcastReceiver {
             }
             Log.d(TAG, "CPU settings restored.");
         }
+    }
+
+    private void configureKSM(Context ctx) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+
+        boolean ksm = prefs.getBoolean(MemoryManagement.KSM_PREF, false);
+
+        Utils.fileWriteOneLine(MemoryManagement.KSM_RUN_FILE, ksm ? "1" : "0");
+        Log.d(TAG, "KSM settings restored.");
     }
 }

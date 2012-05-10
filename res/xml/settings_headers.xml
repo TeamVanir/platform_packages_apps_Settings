@@ -26,6 +26,14 @@
  android:targetPackage="com.tmobile.themechooser"
  android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
+
+    <!-- Performance -->
+    <header
+        android:id="@+id/performance_settings"
+        android:fragment="com.android.settings.vicious.PerformanceSettings"
+        android:icon="@drawable/ic_settings_performance"
+        android:title="@string/performance_settings_title" />
+
     <!-- WIRELESS and NETWORKS -->
     <header android:title="@string/header_category_wireless_networks" />
 

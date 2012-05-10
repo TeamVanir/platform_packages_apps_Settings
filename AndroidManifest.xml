@@ -1348,6 +1348,9 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
+    <!-- CyanogenMod activities -->
+        <activity android:name=".vicious.PerformanceSettings" />
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
@@ -1391,12 +1394,6 @@
                 <action android:name="com.android.sync.SYNC_CONN_STATUS_CHANGED" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
-        </receiver>
-
-        <receiver android:name=".bb.BootReceiver" android:enabled="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
         </receiver>
 
         <activity android:name=".bb.fragments.StatusBarToggles" >

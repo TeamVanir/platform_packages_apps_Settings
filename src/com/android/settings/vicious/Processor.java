@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.bb.fragments;
+package com.android.settings.vicious;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

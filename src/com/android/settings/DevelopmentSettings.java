@@ -77,8 +77,6 @@ public class DevelopmentSettings extends PreferenceFragment
 
     private static final String SHOW_ALL_ANRS_KEY = "show_all_anrs";
 
-    private static final String PROCESSOR = "processor";
-
     private IWindowManager mWindowManager;
     private IBackupManager mBackupManager;
 
@@ -86,7 +84,6 @@ public class DevelopmentSettings extends PreferenceFragment
     private CheckBoxPreference mKeepScreenOn;
     private CheckBoxPreference mAllowMockLocation;
     private PreferenceScreen mPassword;
-    private PreferenceScreen mProcessor;
 
     private CheckBoxPreference mStrictMode;
     private CheckBoxPreference mPointerLocation;
@@ -140,8 +137,6 @@ public class DevelopmentSettings extends PreferenceFragment
 
         mShowAllANRs = (CheckBoxPreference) findPreference(
                 SHOW_ALL_ANRS_KEY);
-
-        mProcessor = (PreferenceScreen) findPreference(PROCESSOR);
 
         final Preference verifierDeviceIdentifier = findPreference(VERIFIER_DEVICE_IDENTIFIER);
         final PackageManager pm = getActivity().getPackageManager();
@@ -461,9 +456,6 @@ public class DevelopmentSettings extends PreferenceFragment
             writeShowAllANRsOptions();
         } else if (preference == mForceHardwareUi) {
             writeHardwareUiOptions();
-        } else {
-            // If we didn't handle it, let preferences handle it
-            return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
 
         return false;
