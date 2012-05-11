@@ -44,25 +44,9 @@ public class PerformanceSettings extends SettingsPreferenceFragment
 
     private static final String USE_16BPP_ALPHA_PROP = "persist.sys.use_16bpp_alpha";
 
-    private static final String USE_HARDWARE_ACCELERATION_PREF = "pref_use_hardware_acceleration";
-
-    private static final String USE_HARDWARE_ACCELERATION_PROP = "debug.sf.hw";
-
-    private static final String USE_HARDWARE_ACCELERATION_DEFAULT = "0";
-
-    private static final String USE_ERROR_CHECKING_TOGGLE_PREF = "pref_use_error_checking_toggle";
-
-    private static final String USE_ERROR_CHECKING_TOGGLE_PROP = "ro.kernel.android.checkjni";
-
-    private static final String USE_ERROR_CHECKING_TOGGLE_DEFAULT = "1";
-
     private CheckBoxPreference mUseDitheringPref;
 
     private CheckBoxPreference mUse16bppAlphaPref;
-
-    private CheckBoxPreference mUseHardwareAccelerationPref;
-
-    private CheckBoxPreference mUseErrorCheckingTogglePref;
 
     private AlertDialog alertDialog;
 
@@ -78,8 +62,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment
 
             mUseDitheringPref = (CheckBoxPreference) prefSet.findPreference(USE_DITHERING_PREF);
             mUse16bppAlphaPref = (CheckBoxPreference) prefSet.findPreference(USE_16BPP_ALPHA_PREF);
-            mUseHardwareAccelerationPref = (CheckBoxPreference) prefSet.findPreference(USE_HARDWARE_ACCELERATION_PREF);
-            mUseErrorCheckingTogglePref = (CheckBoxPreference) prefSet.findPreference(USE_ERROR_CHECKING_TOGGLE_PREF);
 
             String useDithering = SystemProperties.get(USE_DITHERING_PERSIST_PROP,
                     USE_DITHERING_DEFAULT);
@@ -87,14 +69,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment
 
             String use16bppAlpha = SystemProperties.get(USE_16BPP_ALPHA_PROP, "0");
             mUse16bppAlphaPref.setChecked("1".equals(use16bppAlpha));
-
-            String useHardwareAcceleration = SystemProperties.get(USE_HARDWARE_ACCELERATION_PROP,
-                    USE_HARDWARE_ACCELERATION_DEFAULT);
-            mUseHardwareAccelerationPref.setChecked("1".equals(useHardwareAcceleration));
-
-            String useErrorCheckingToggle = SystemProperties.get(USE_ERROR_CHECKING_TOGGLE_PROP,
-                    USE_ERROR_CHECKING_TOGGLE_DEFAULT);
-            mUseErrorCheckingTogglePref.setChecked("0".equals(useErrorCheckingToggle));
 
             /* Display the warning dialog */
             alertDialog = new AlertDialog.Builder(getActivity()).create();
@@ -120,12 +94,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment
         } else if (preference == mUse16bppAlphaPref) {
             SystemProperties.set(USE_16BPP_ALPHA_PROP,
                     mUse16bppAlphaPref.isChecked() ? "1" : "0");
-        } else if (preference == mUseHardwareAccelerationPref) {
-            SystemProperties.set(USE_HARDWARE_ACCELERATION_PROP,
-                    mUseHardwareAccelerationPref.isChecked() ? "1" : "0");
-        } else if (preference == mUseErrorCheckingTogglePref) {
-            SystemProperties.set(USE_ERROR_CHECKING_TOGGLE_PROP,
-                    mUseErrorCheckingTogglePref.isChecked() ? "1" : "0");
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
