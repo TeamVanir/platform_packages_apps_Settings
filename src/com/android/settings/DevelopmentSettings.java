@@ -456,6 +456,7 @@ public class DevelopmentSettings extends PreferenceFragment
             writeShowAllANRsOptions();
         } else if (preference == mForceHardwareUi) {
             writeHardwareUiOptions();
+      
         }
 
         return false;

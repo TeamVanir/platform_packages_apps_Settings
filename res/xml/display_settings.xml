@@ -62,5 +62,13 @@
         <Preference android:key="lockscreen_targets"
              android:title="@string/lockscreen_target_title"
              android:summary="@string/lockscreen_target_summary"
-             android:fragment="com.android.settings.rascarlo.LockscreenTargets" />
+             android:fragment="com.android.settings.rascarlo.LockscreenTargets" 
+            android:persistent="false" />
+
+        <!-- BUILD TWEAKS Toggle Settings -->
+        <PreferenceScreen
+                android:id="@+id/statusbar_toggles"
+                android:fragment="com.android.settings.rascarlo.fragments.StatusBarToggles"
+                android:title="@string/toggles_layout" />
+
 </PreferenceScreen>
