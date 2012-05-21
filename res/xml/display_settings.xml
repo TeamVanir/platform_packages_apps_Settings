@@ -53,7 +53,12 @@
             android:title="@string/notification_pulse_title"
           android:persistent="false" />
 
-        <!-- Toggle Settings -->
+        <PreferenceScreen
+            android:key="navigation_bar"
+            android:fragment="com.android.settings.rascarlo.NavBar"
+            android:title="@string/navigation_bar_title" />
+
+        <!-- BUILD TWEAKS. Toggle Settings -->
         <PreferenceScreen
                 android:id="@+id/statusbar_toggles"
                 android:fragment="com.android.settings.bb.fragments.StatusBarToggles"
