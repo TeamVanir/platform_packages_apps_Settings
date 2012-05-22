@@ -54,10 +54,17 @@
           android:persistent="false" />
 
         <PreferenceScreen
-            android:key="navigation_bar"
-            android:fragment="com.android.settings.rascarlo.NavBar"
-            android:title="@string/navigation_bar_title" />
-
+             android:key="navigation_bar"
+             android:fragment="com.android.settings.rascarlo.NavBar"
+             android:title="@string/navigation_bar_title" 
+             android:summary="@string/navigation_bar_summary" />
+            
+        <!-- BUILD TWEAKS. Lockscreen Targets -->
+        <Preference android:key="lockscreen_targets"
+             android:title="@string/lockscreen_target_title"
+             android:summary="@string/lockscreen_target_summary"
+             android:fragment="com.android.settings.rascarlo.LockscreenTargets" />
+            
         <!-- BUILD TWEAKS. Toggle Settings -->
         <PreferenceScreen
                 android:id="@+id/statusbar_toggles"
