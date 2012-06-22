@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.vicious;
+package com.android.settings.vanir;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

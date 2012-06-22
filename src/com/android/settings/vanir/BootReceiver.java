@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.vicious;
+package com.android.settings.vanir;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

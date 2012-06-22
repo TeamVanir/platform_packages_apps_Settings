@@ -21,13 +21,13 @@
 
     <PreferenceScreen
         android:key="processor"
-        android:fragment="com.android.settings.vicious.Processor"
+        android:fragment="com.android.settings.vanir.Processor"
         android:title="@string/processor_title"
         android:summary="@string/processor_summary" />
 
     <PreferenceScreen
         android:key="memory_management"
-        android:fragment="com.android.settings.vicious.MemoryManagement"
+        android:fragment="com.android.settings.vanir.MemoryManagement"
         android:title="@string/memory_management_title"
         android:summary="@string/memory_management_summary" />
 

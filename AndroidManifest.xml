@@ -1349,7 +1349,7 @@
         />
 
     <!-- CyanogenMod activities -->
-        <activity android:name=".vicious.PerformanceSettings" />
+        <activity android:name=".vanir.PerformanceSettings" />
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
