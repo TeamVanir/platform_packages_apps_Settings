@@ -3819,18 +3819,6 @@ found in the list of installed apps.</string>
     from their cell phone carrier. The use of the string is similar to the string
     "system_update_settings_list_item_title" in this project. [CHAR LIMIT=25] -->
     <string name="additional_system_update_settings_list_item_title">Additional system updates</string>
-
-
-    <!-- BUILD TWEAKS. Status bar toggles settings -->
-    <string name="toggles_layout">Status bar toggles</string>
-    <string name="alternate_button_layout_title">Toggle style</string>
-    <string name="alternate_button_layout_summary">Use buttons instead of switches</string>
-    <string name="enabled_toggles_title">Enabled toggles</string>
-    <string name="toggles_order_title">Toggles order</string>
-    <string name="alternate_button_layout_title">Use icons instead of switches</string>
-    <string name="always_visible_toggles">Auto-hide</string>
-    <string name="default_title">Reset defaults</string>
-    <string name="brightness_location_title">Brightness slider location</string>
     
     <!-- BUILD TWEAKS. Lockscreen Targets -->
     <!-- String for ShortcutPickHelper -->
@@ -3894,8 +3882,8 @@ found in the list of installed apps.</string>
     <string name="performance_settings_warning_title">Proceed with Caution</string>
     <string name="performance_settings_warning">These settings are included for experimentation and any changes made to them have the potential to cause instability, crashes, data loss or hardware failures.\n\nWe request you do not file bug reports if any of these settings have been changed from the defaults.</string>
 
-    <!-- Performance Settings : Processor Settings -->
-    <!-- Performance Settings : Processor settings title -->
+    <!-- Performance Settings -->
+    <string name="performance_settings_title">Performance</string>
     <string name="processor_title">Processor</string>
     <!-- Performance Settings : Processor settings summary. -->
     <string name="processor_summary">Change CPU governor and clock speed</string>

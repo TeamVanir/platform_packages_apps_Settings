@@ -52,7 +52,6 @@
             android:key="notification_pulse"
             android:title="@string/notification_pulse_title"
           android:persistent="false" />
-
         <PreferenceScreen
              android:key="navigation_bar"
              android:fragment="com.android.settings.rascarlo.NavBar"
@@ -64,11 +63,4 @@
              android:title="@string/lockscreen_target_title"
              android:summary="@string/lockscreen_target_summary"
              android:fragment="com.android.settings.rascarlo.LockscreenTargets" />
-            
-        <!-- BUILD TWEAKS. Toggle Settings -->
-        <PreferenceScreen
-                android:id="@+id/statusbar_toggles"
-                android:fragment="com.android.settings.bb.fragments.StatusBarToggles"
-                android:title="@string/toggles_layout" />
-
 </PreferenceScreen>

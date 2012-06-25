@@ -1396,13 +1396,11 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info" />
         </receiver>
 
-        <activity android:name=".bb.fragments.StatusBarToggles" >
+        <receiver android:name=".bb.BootReceiver" android:enabled="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-        </activity>
-        
-        <activity android:name=".rascarlo.LockscreenTargets" />
+        </receiver>
 
     </application>
 </manifest>
