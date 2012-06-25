@@ -802,19 +802,18 @@
         <item>@*android:drawable/ic_lockscreen_twitter_normal</item>
     </string-array>
 
-   
-    <string-array name="root_access_entries"> 
-        <item>@string/root_access_none</item> 
-        <item>@string/root_access_apps</item> 
-        <item>@string/root_access_adb</item> 
-        <item>@string/root_access_all</item> 
-    </string-array> 
- 
-    <string-array name="root_access_values"> 
-        <item>0</item> 
-        <item>1</item> 
-        <item>2</item> 
-        <item>3</item> 
-    </string-array> 
+   <string-array name="pref_zram_size_entries">
+        <item>Disabled</item>
+        <item>10%</item>
+        <item>18% (default)</item>
+        <item>26%</item>
+    </string-array>
+
+    <string-array name="pref_zram_size_values" translatable="false">
+        <item>0</item>
+        <item>10</item>
+        <item>18</item>
+        <item>26</item>
+    </string-array>
 
 </resources>
